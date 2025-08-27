@@ -39,8 +39,10 @@ The following statistical methods were central to this analysis:
 ## 📁 Repository Contents
 
 * `Treatment-Efficacy.html`: The final HTML report (also the source for the live site).
-* `analysis.Rmd` (or `.R`): The complete R Markdown source code for full reproducibility.
-* `[your_data_file.csv]`: The raw dataset used for the analysis. *(Please rename this to match your actual data file name)*.
+* `Treatment Efficacy.Rmd`: The complete R Markdown source code for full reproducibility.
+* `Treatment Efficacy.R`: The complete R-Script source code for full reproducibility.
+* `[style.css]`: The style used in the report.
+  
 
 ---
 
