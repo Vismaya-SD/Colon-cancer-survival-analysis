@@ -46,28 +46,6 @@ The following statistical methods were central to this analysis:
 
 ---
 
-## 🔧 How to Reproduce this Analysis
-
-To run this analysis on your own machine, please follow these steps:
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
-    cd your-repository-name
-    ```
-
-2.  **Prerequisites:**
-    * Ensure you have [R](https://www.r-project.org/) and [RStudio Desktop](https://posit.co/download/rstudio-desktop/) installed.
-    * Install the necessary R packages by running this command in your R console:
-        ```R
-        install.packages(c("survival", "survminer", "ggplot2", "dplyr"))
-        ```
-
-3.  **Run the Analysis:**
-    * Open the `analysis.Rmd` file in RStudio.
-    * Click the "Knit" button to execute the code and regenerate the `Treatment-Efficacy.html` report.
-
----
 
 ### Author
 
