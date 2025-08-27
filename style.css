@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+h1.title {
+  font-family: 'Merriweather', serif;
+  font-size: 32px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+h4.author, h4.date {
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  color: #34495e;
+}
