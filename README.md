@@ -9,13 +9,7 @@ A biostatistics project analyzing survival data to evaluate treatment efficacy a
 
 ---
 
-## 🚀 View the Live Report
 
-The full interactive HTML report is hosted online.
-
-**[➡️ Click here to view the Live Report](https://your-username.github.io/your-repository-name/Treatment-Efficacy.html)**
-
----
 
 ## 📖 Overview
 
