@@ -1,6 +1,6 @@
 # Analysis of Colon Cancer Survival Data: Treatment Efficacy and Subgroup Identification
 
-[![View Live Report](https://img.shields.io/badge/View-Live%20Report-brightgreen)](https://github.com/Vismaya-SD/Colon-cancer-survival-analysismain/docs/index)
+[![View Live Report](https://img.shields.io/badge/View-Live%20Report-brightgreen)](https://github.com/Vismaya-SD/Colon-cancer-survival-analysis/docs/index)
 [![Language](https://img.shields.io/badge/language-R-blue)](https://www.r-project.org/)
 [![Analysis](https://img.shields.io/badge/analysis-survival-green)](https://en.wikipedia.org/wiki/Survival_analysis)
 
