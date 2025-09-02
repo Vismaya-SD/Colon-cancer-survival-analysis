@@ -51,6 +51,17 @@ survdiff(Surv(time, status) ~ rx, data = colondeath)
 # Fit Cox model on full dataset
 fit_cox_full <- coxph(Surv(time, status) ~ rx + age + sex + nodes, data = colon)
 
+# Perform the test
+ph_test <- cox.zph(fit_cox_full)
+
+# Print the statistical results
+# A p-value > 0.05 indicates the assumption holds for that variable.
+print(ph_test)
+
+# Create a visual plot of the Schoenfeld residuals
+# If the assumption holds, the lines should be roughly flat and horizontal.
+ggcoxzph(ph_test)
+
 # Forest plot for hazard ratios
 ggforest(fit_cox_full, data = colon)
 
