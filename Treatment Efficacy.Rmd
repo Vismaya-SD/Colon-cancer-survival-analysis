@@ -38,7 +38,8 @@ First, we load the necessary libraries and the `colon` dataset. We then filter t
 # Load and filter the data
 colon <- survival::colon
 colondeath <- filter(as_tibble(colon), etype == 2)
-
+nrow(colondeath)
+nrow(colon)
 # Re-level the factor to prevent mismatches in plotting functions
 colondeath$rx <- factor(colondeath$rx)
 ```
@@ -80,6 +81,32 @@ The Kaplan-Meier plot (Figure 1) shows a clear separation between the curves, wi
 ## 4. Multivariable Risk Factor Analysis
 
 While the Kaplan-Meier analysis is useful, it doesn't account for other factors that might influence survival. We built a Cox Proportional Hazards model to assess the effect of treatment while adjusting for age, sex, and the number of positive lymph nodes.
+
+Check Proportional Hazards Assumption - This is a critical step to validate the Cox model. We use the cox.zph() function, which tests the null hypothesis that the proportional hazards assumption is valid.
+
+```{r test}
+
+# Fit Cox model on full dataset
+fit_cox_full <- coxph(Surv(time, status) ~ rx + age + sex + nodes, data = colon)
+
+# Perform the test
+ph_test <- cox.zph(fit_cox_full)
+
+# Print the statistical results
+# A p-value > 0.05 indicates the assumption holds for that variable.
+print(ph_test)
+
+# Create a visual plot of the Schoenfeld residuals
+# If the assumption holds, the lines should be roughly flat and horizontal.
+ggcoxzph(ph_test)
+
+```
+
+### Interpretation of Your Results
+
+* **GLOBAL Test (p = 0.439):** This is the most important result. The overall test for your entire model has a p-value of 0.439, which is much higher than 0.05. This indicates that the model as a whole does not violate the proportional hazards assumption.
+
+* **Individual Variables:** All the individual predictors (rx, age, sex, nodes) also have p-values greater than 0.05. This means the effect of each variable on survival is constant over time, as required by the model
 
 ```{r cox_model, fig.cap="Figure 2: Forest plot of the multivariable Cox model. Hazard Ratios less than 1 indicate a protective effect (reduced risk of death), while ratios greater than 1 indicate an increased risk."}
 # FIX: To ensure perfect consistency and avoid plotting errors, we create a
